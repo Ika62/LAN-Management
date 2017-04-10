@@ -1,0 +1,27 @@
+body {
+		margin-top: 1%;
+	}
+	
+#gestionCss{
+	float:left;
+	width:10%;
+	text-align:right;
+	margin-right: 1%;
+	border: double;
+}
+
+#listeEquipe{
+	float:left;
+	border: double;
+	box-shadow: 3px 3px 0px black;
+	padding: 0.5% 0.5% 0.5% 0.5%;
+	margin-left: 1%;
+}
+
+#listeMatch{
+	float:left;
+	margin-left: 2%;
+	border: double;
+	box-shadow: 3px 3px 0px black;
+	padding: 0.5% 0.5% 0.5% 0.5%;
+}
