@@ -71,18 +71,17 @@
 
 			<!-- Choix de la map -->
 
-			<div id="listeMap"></p>Voici la liste des mapss</p>
+			<div id="listeMap"></p>Voici la liste des maps</p>
 				
-				<input name="inf" type="button" value="de_inferno" />
-				<input name="nuke" type="button" value="de_nuke" />
-				<input name="cbb" type="button" value="de_cbble" />
-				<input name="mir" type="button" value="de_mirage" />
-				<input name="cac" type="button" value="de_cache" />
-				<input name="over" type="button" value="de_overpass" />
-				<input name="trn" type="button" value="de_train" />
+				<input name="inf" type="button" value="de_inferno" onclick="veto()" />
+				<input name="nuke" type="button" value="de_nuke" onclick="veto()"/>
+				<input name="cbb" type="button" value="de_cbble" onclick="veto()"/>
+				<input name="mir" type="button" value="de_mirage" onclick="veto()"/>
+				<input name="cac" type="button" value="de_cache" onclick="veto()"/>
+				<input name="over" type="button" value="de_overpass" onclick="veto()"/>
+				<input name="trn" type="button" value="de_train" onclick="veto()"/>
 				
 			</div></p>
-			
 			
 			<!-- Bouton pour creer le match après toutes les informations -->
 
