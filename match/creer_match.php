@@ -64,7 +64,7 @@
 			<!-- Choix du format de match -->
 
 			<div id="choixFormat">Choix du format du match</br>
-				<label>BO1<input type="radio" name="format" value="bo1" ></label>
+				<label>BO1<input type="radio" name="format" value="bo1"></label>
 				<label>BO3<input type="radio" name="format" value="bo3"></label>
 				<label>BO5<input type="radio" name="format" value="bo5"></label>
 			</div>
@@ -72,17 +72,17 @@
 			<!-- Choix de la map -->
 
 			<div id="listeMap"></p>Voici la liste des maps</p>
-				
-				<input name="inf" type="button" value="de_inferno" onclick="veto()" />
-				<input name="nuke" type="button" value="de_nuke" onclick="veto()" />
-				<input name="cbb" type="button" value="de_cbble" onclick="veto()" />
-				<input name="mir" type="button" value="de_mirage" onclick="veto()" />
-				<input name="cac" type="button" value="de_cache" onclick="veto()" />
-				<input name="over" type="button" value="de_overpass" onclick="veto()" />
-				<input name="trn" type="button" value="de_train" onclick="veto()" />
-				
+
+				<input name="inf" type="button" value="de_inferno" class="map pending" onclick="veto(this)" />
+				<input name="nuke" type="button" value="de_nuke" class="map pending" onclick="veto(this)" />
+				<input name="cbb" type="button" value="de_cbble" class="map pending" onclick="veto(this)" />
+				<input name="mir" type="button" value="de_mirage" class="map pending" onclick="veto(this)" />
+				<input name="cac" type="button" value="de_cache" class="map pending" onclick="veto(this)" />
+				<input name="over" type="button" value="de_overpass" class="map pending" onclick="veto(this)" />
+				<input name="trn" type="button" value="de_train" class="map pending" onclick="veto(this)" />
+
 			</div></p>
-			
+
 			<!-- Bouton pour creer le match après toutes les informations -->
 
 			<input name="valider" type = "submit" value = "Créer le match" />
