@@ -72,7 +72,9 @@
 			<!-- Choix de la map -->
 
 			<div id="listeMap"></p>Voici la liste des maps</p>
-
+				
+				<!-- Quand on met un espace dans classe, ça veut dire que c'est 2 classe. Donc ici, la classe map et pending. -->
+				
 				<input name="inf" type="button" value="de_inferno" class="map pending" onclick="veto(this)" />
 				<input name="nuke" type="button" value="de_nuke" class="map pending" onclick="veto(this)" />
 				<input name="cbb" type="button" value="de_cbble" class="map pending" onclick="veto(this)" />

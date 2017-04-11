@@ -23,7 +23,10 @@ function veto(map) {
 		    else pick(map, veto.firstTeam);
     	}
     	else if ( format == "bo3" )	{
-    			alert('bo3');
+			if( veto.counter == 5 || veto.counter == 4){
+    			pick(map, veto.firstTeam);
+			}
+			else ban(map, veto.firstTeam);
     	}
     	else {
     	    alert ('bo5');
@@ -47,16 +50,21 @@ function pick(map, firstTeam) {
 function ban(map, firstTeam) {
     //Ici, on barre la map
     map.style.textDecoration = "line-through";
-		done(map);
-}
-
-function done(map) {
-	map.classList.remove("pending");
-	map.disabled= "true";
+	done(map);
 }
 
 function remaining() {
+    // On selectionne la map restante qui n'a plus la classe pending
     var remainingMap = document.querySelector('input[type=button].pending');
+    
     remainingMap.style.textDecoration = "underline";
-		done(remainingMap);
+	done(remainingMap);
+}
+
+function done(map) {
+    // On supprime la classe "pending"
+	map.classList.remove("pending");
+	
+	// On désactive le bouton map
+	map.disabled = "true";
 }
