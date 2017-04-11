@@ -11,8 +11,14 @@ function veto(map) {
 	veto.firstTeam = veto.firstTeam || true;
 
 	//Vu que dans les 3 cas, il y a 2 bans on fait ce test.
-	if( veto.counter == 7 ||  veto.counter == 6) {
+	if( veto.counter == 7) {
 	    ban(map, veto.firstTeam);
+	}
+	if(veto.counter == 6) {
+	    ban(map, veto.firstTeam);
+	     if(format == "bo5") {
+	       remaining(5);
+	    }
 	}
 
 	else {
@@ -28,16 +34,13 @@ function veto(map) {
 			}
 			else ban(map, veto.firstTeam);
     	}
-    	else {
-    	    alert ('bo5');
-    	}
     }
 
 		veto.counter--;
 		veto.firstTeam = !veto.firstTeam;
 
     if(veto.counter == 1) {
-        remaining();
+        remaining(1);
     }
 
 }
@@ -53,18 +56,20 @@ function ban(map, firstTeam) {
 	done(map);
 }
 
-function remaining() {
-    // On selectionne la map restante qui n'a plus la classe pending
-    var remainingMap = document.querySelector('input[type=button].pending');
-    
-    remainingMap.style.textDecoration = "underline";
-	done(remainingMap);
+function remaining(times) {
+    // On répère le nombre de fois passé en paramètre
+    for(i=0;i<times;i++) {
+         // On selectionne la map restante qui n'a plus la classe pending
+        var remainingMap = document.querySelector('input[type=button].pending');
+        remainingMap.style.textDecoration = "underline";
+    	done(remainingMap);
+    }
 }
 
 function done(map) {
     // On supprime la classe "pending"
 	map.classList.remove("pending");
-	
+
 	// On désactive le bouton map
 	map.disabled = "true";
 }
