@@ -11,7 +11,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <link rel="stylesheet" type="text/css" href="/<?= PROJECT_NAME ?>/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="/<?= PROJECT_NAME ?>/css/zero.css" />
 		<link rel="stylesheet" type="text/css" href="/<?= PROJECT_NAME ?>/css/index.css" />
 
 		<title>Gestion Lan</title>
