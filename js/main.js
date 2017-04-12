@@ -1,8 +1,5 @@
 
-function veto(map) {
-
-	//Ici on récupère la valeur. ( Si c'est bo1, bo3, bo5.. ce qu'on a choisit )
-	var format = document.querySelector('input[name="format"]:checked').value
+function veto(map, bo) {
 
 	//Le compteur est = à lui même, ou à 7 s'il n'est pas défini. (au début quoi)
 	veto.counter = veto.counter || 7;
@@ -16,19 +13,19 @@ function veto(map) {
 	}
 	if(veto.counter == 6) {
 	    ban(map, veto.firstTeam);
-	     if(format == "bo5") {
+	     if(bo == "bo5") {
 	       remaining(5);
 	    }
 	}
 
 	else {
-    	if ( format == "bo1" ) {
+    	if ( bo == "bo1" ) {
 		    if ( veto.counter != 1) {
 		        ban(map, veto.firstTeam);
 		    }
 		    else pick(map, veto.firstTeam);
     	}
-    	else if ( format == "bo3" )	{
+    	else if ( bo == "bo3" )	{
 			if( veto.counter == 5 || veto.counter == 4){
     			pick(map, veto.firstTeam);
 			}

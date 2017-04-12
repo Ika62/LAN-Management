@@ -4,7 +4,7 @@
 ?>
 		<!-- Choix de la première équipe -->
 
-		<form action="ajouter_match.php" method="POST">
+		<form action="veto.php" method="POST">
 
 			<div id="choix1">Choix de la première équipe</br>
 				<select name="equipe1" id="equipe1" size="20">
@@ -64,26 +64,10 @@
 			<!-- Choix du format de match -->
 
 			<div id="choixFormat">Choix du format du match</br>
-				<label>BO1<input type="radio" name="format" value="bo1"></label>
+				<label>BO1<input type="radio" name="format" value="bo1" selected></label>
 				<label>BO3<input type="radio" name="format" value="bo3"></label>
 				<label>BO5<input type="radio" name="format" value="bo5"></label>
 			</div>
-
-			<!-- Choix de la map -->
-
-			<div id="listeMap"></p>Voici la liste des maps</p>
-				
-				<!-- Quand on met un espace dans classe, ça veut dire que c'est 2 classe. Donc ici, la classe map et pending. -->
-				
-				<input name="inf" type="button" value="de_inferno" class="map pending" onclick="veto(this)" />
-				<input name="nuke" type="button" value="de_nuke" class="map pending" onclick="veto(this)" />
-				<input name="cbb" type="button" value="de_cbble" class="map pending" onclick="veto(this)" />
-				<input name="mir" type="button" value="de_mirage" class="map pending" onclick="veto(this)" />
-				<input name="cac" type="button" value="de_cache" class="map pending" onclick="veto(this)" />
-				<input name="over" type="button" value="de_overpass" class="map pending" onclick="veto(this)" />
-				<input name="trn" type="button" value="de_train" class="map pending" onclick="veto(this)" />
-
-			</div></p>
 
 			<!-- Bouton pour creer le match après toutes les informations -->
 
