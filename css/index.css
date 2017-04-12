@@ -1,7 +1,7 @@
 body {
 		margin-top: 1%;
 	}
-	
+
 #gestionCss{
 	float:left;
 	width:10%;
@@ -26,9 +26,44 @@ body {
 	padding: 0.5% 0.5% 0.5% 0.5%;
 }
 
-#equipe2 {
-    margin-right: 20px;
-    overflow-y: auto;
-    text-align: center;
-    width: 100px;
+.choix{
+    border: none;
+    background-image: linear-gradient(to top, #C43E2F, #D16428);
+    box-shadow: 0 0 4px #D16428;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    text-align:center;
+    font-weight: bold;
+}
+
+.teamlist {
+		columns: 4 50px;
+}
+
+.teamcontainer {
+	display: inline-block;
+	width: 670px;
+	margin: 30px;
+}
+
+.team {
+	padding: 5px;
+	margin: 5px;
+	cursor: pointer; /* Pour que la souris soit un pointeur en gros ça change la forme */
+	display: inline-block;
+	height: 30px;
+	width: 150px;
+	border: solid 1px #597fa3;
+	text-align:center;
+	background-color: #597fa3;
+	opacity: 0.6; /* L'opacité est a 70% de base ==> voir hover */
+	color: #FFF;
+	border-radius: 3px; /* Les coins en arrondi */
+}
+
+.team:hover, .team.selected { /* Quand on passe sur le nom des équipes, ça fait ceci : */
+	color: #FFF;
+	text-decoration:none;
+	opacity: 1;
 }

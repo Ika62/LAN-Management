@@ -1,6 +1,34 @@
 
 function veto(map, bo) {
 
+	var pick = function(map) {
+			map.style.textDecoration = "underline";
+			done(map);
+	}
+
+	var ban = function(map) {
+			//Ici, on barre la map
+			map.style.textDecoration = "line-through";
+		done(map);
+	}
+
+	var remaining = function(times) {
+			// On répère le nombre de fois passé en paramètre
+			for(i=0;i<times;i++) {
+					 // On selectionne la map restante qui n'a plus la classe pending
+					var remainingMap = document.querySelector('input[type=button].pending');
+					remainingMap.style.textDecoration = "underline";
+				done(remainingMap);
+			}
+	}
+
+	var done = function(map) {
+			// On supprime la classe "pending"
+		map.classList.remove("pending");
+		// On désactive le bouton map
+		map.disabled = "true";
+	}
+
 	//Le compteur est = à lui même, ou à 7 s'il n'est pas défini. (au début quoi)
 	veto.counter = veto.counter || 7;
 
@@ -39,34 +67,13 @@ function veto(map, bo) {
     if(veto.counter == 1) {
         remaining(1);
     }
-
 }
 
-function pick(map, firstTeam) {
-    map.style.textDecoration = "underline";
-    done(map);
+function selectTeam(team, link) {
+	document.getElementById(team).value = link.innerHTML;
+	var links = document.querySelectorAll("#"+team+" + div a.team")
+	for (i = 0; i < links.length; i++) {
+    links[i].classList.remove("selected");
 }
-
-function ban(map, firstTeam) {
-    //Ici, on barre la map
-    map.style.textDecoration = "line-through";
-	done(map);
-}
-
-function remaining(times) {
-    // On répère le nombre de fois passé en paramètre
-    for(i=0;i<times;i++) {
-         // On selectionne la map restante qui n'a plus la classe pending
-        var remainingMap = document.querySelector('input[type=button].pending');
-        remainingMap.style.textDecoration = "underline";
-    	done(remainingMap);
-    }
-}
-
-function done(map) {
-    // On supprime la classe "pending"
-	map.classList.remove("pending");
-
-	// On désactive le bouton map
-	map.disabled = "true";
+	link.classList.add("selected");
 }

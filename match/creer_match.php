@@ -6,44 +6,55 @@
 
 		<form action="veto.php" method="POST">
 
-			<div id="choix1">Choix de la première équipe</br>
+			<div align="center">
+				<div class="teamcontainer">
+					<div id="choix1" class="choix" >Choix de la première équipe</br> </div>
 
-				 <input type="hidden" name="equipe1" id="equipe1" />
-				<?php //Ici on insert la liste des équipes.
+					<div class="teamlist">
+						<input type="hidden" name="equipe1" id="equipe1" />
+						<div>
+						<?php //Ici on insert la liste des équipes.
 
-					$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
-					while ($donnee = $equipe -> fetch() )
-					{
-					?>
-						<a onclick="document.getElementById('equipe1').value = '<?= $donnee['nom']; ?>'"> <?= $donnee['nom']; ?> </a>
-					<?php
-					}
+							$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
+							while ($donnee = $equipe -> fetch() )
+							{
+							?>
+								<a class="team" onclick="selectTeam('equipe1', this);"><?= $donnee['nom'] ?></a>
+							<?php
+							}
 
-					$equipe -> closeCursor();
+							$equipe -> closeCursor();
 
-				?>
-				</select>
+						?>
+					</div>
+					</div>
+				</div>
+				<!-- Choix de la deuxième équipe -->
+
+				<div class="teamcontainer">
+					<div id="choix2" class="choix" >Choix de la deuxième équipe</br> </div>
+
+					<div class="teamlist">
+					    <!-- L'input c'est pour pouvoir l'envoyer a l'autre page -->
+					    <input type="hidden" name="equipe2" id="equipe2" />
+							<div>
+					    <?php //Ici on insert la liste des équipes.
+
+							$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
+							while ($donnee = $equipe -> fetch() )
+							{
+							?>
+								<a class="team" onclick="selectTeam('equipe2', this);"><?= $donnee['nom'] ?></a>
+							<?php
+							}
+
+							$equipe -> closeCursor();
+
+						?>
+					</div>
+					</div>
+				</div>
 			</div>
-
-			<!-- Choix de la deuxième équipe -->
-
-			<div id="choix2">Choix de la deuxième équipe</br>
-			    <input type="hidden" name="equipe2" id="equipe2" />
-			    <?php //Ici on insert la liste des équipes.
-
-					$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
-					while ($donnee = $equipe -> fetch() )
-					{
-					?>
-						<a onclick="document.getElementById('equipe2').value = '<?= $donnee['nom']; ?>'"> <?= $donnee['nom']; ?> </a>
-					<?php
-					}
-
-					$equipe -> closeCursor();
-
-				?>
-			</div>
-
 			<!-- Choix du serveur -->
 
 			<div id="choixServeur">Choisir le serveur</br>
