@@ -7,14 +7,15 @@
 		<form action="veto.php" method="POST">
 
 			<div id="choix1">Choix de la première équipe</br>
-				<select name="equipe1" id="equipe1" size="20">
+
+				 <input type="hidden" name="equipe1" id="equipe1" />
 				<?php //Ici on insert la liste des équipes.
 
 					$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
 					while ($donnee = $equipe -> fetch() )
 					{
 					?>
-						<option value="<?php echo $donnee['nom']; ?>"> <?php echo $donnee['nom']; ?></option>
+						<a onclick="document.getElementById('equipe1').value = '<?= $donnee['nom']; ?>'"> <?= $donnee['nom']; ?> </a>
 					<?php
 					}
 
@@ -27,21 +28,20 @@
 			<!-- Choix de la deuxième équipe -->
 
 			<div id="choix2">Choix de la deuxième équipe</br>
-				<select name="equipe2" id="equipe2" size="20" >
-				<?php //Ici on insert la liste des équipes.
+			    <input type="hidden" name="equipe2" id="equipe2" />
+			    <?php //Ici on insert la liste des équipes.
 
 					$equipe = $bdd -> query('SELECT ID, nom FROM equipe ORDER BY ID ');
 					while ($donnee = $equipe -> fetch() )
 					{
 					?>
-						<option value="<?php echo $donnee['nom']; ?>"> <?php echo $donnee['nom']; ?></option>
+						<a onclick="document.getElementById('equipe2').value = '<?= $donnee['nom']; ?>'"> <?= $donnee['nom']; ?> </a>
 					<?php
 					}
 
 					$equipe -> closeCursor();
 
 				?>
-				</select>
 			</div>
 
 			<!-- Choix du serveur -->
@@ -75,6 +75,6 @@
 
 		</form>
 
-		<?php
-			include('../footer.php');
-		?>
+<?php
+	include('../footer.php');
+?>

@@ -1,8 +1,19 @@
 <?php
 	include('../header.php');
 	$bo = $_POST['format'];
+	$team1 = $_POST['equipe1'];
+	$team2 = $_POST['equipe2'];
 ?>
 
+<!-- Nom des 2 équies -->
+
+<div id="nomEquipe1">Nom de l'équipe de gauche</br>
+<?= $team1 ?>
+</div></p>
+
+<div id="nomEquipe2">Nom de l'équipe de droite</br>
+<?= $team2 ?>
+</div></p>
 <!-- Choix de la map -->
 
 <div id="listeMap"></p>Voici la liste des maps</p>
