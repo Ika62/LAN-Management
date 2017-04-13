@@ -8,7 +8,7 @@
 
 
 
-			<div align="center">
+			<div align="center" class="window">
 
 				<!-- Choix du format de match -->
 
