@@ -41,7 +41,7 @@ body {
 
 .teamlist {
 		columns: 4 200px;
-		column-gap: 2px;
+		column-gap: 4px;
 		-moz-column-gap: 2px;
 		-moz-column-count: 4;
 		-moz-column-width: 200px;
