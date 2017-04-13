@@ -1,5 +1,6 @@
 body {
-		margin-top: 1%;
+		margin:0;
+		padding:0;
 	}
 
 #gestionCss{
@@ -35,25 +36,26 @@ body {
     width: 100%;
     text-align:center;
     font-weight: bold;
+		margin-bottom: 5px;
 }
 
 .teamlist {
-		columns: 4 50px;
+		columns: 4 150px;
 }
 
-.teamcontainer {
-	display: inline-block;
-	width: 670px;
-	margin: 30px;
+.choicecontainer {
+	display: block;
+	max-width: 1200px;
+	margin-top: 30px;
 }
 
 .team {
-	padding: 5px;
-	margin: 5px;
+	padding: 2px;
+	margin: 2px;
 	cursor: pointer; /* Pour que la souris soit un pointeur en gros ça change la forme */
 	display: inline-block;
-	height: 30px;
-	width: 150px;
+	height: 40px;
+	width: 100%;
 	border: solid 1px #597fa3;
 	text-align:center;
 	background-color: #597fa3;
