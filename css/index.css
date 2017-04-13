@@ -41,6 +41,8 @@ body {
 
 .teamlist {
 		columns: 4 200px;
+		column-gap: 2px;
+		-moz-column-gap: 2px;
 		-moz-column-count: 4;
 		-moz-column-width: 200px;
 }
@@ -53,7 +55,8 @@ body {
 
 .team {
 	padding: 2px;
-	margin: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	cursor: pointer; /* Pour que la souris soit un pointeur en gros ça change la forme */
 	display: inline-block;
 	height: 40px;
